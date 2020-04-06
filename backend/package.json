@@ -1,11 +1,9 @@
 {
   "name": "chat",
   "description": "a simple chat application",
-  "keywords": [
-    "chat",
-    "application",
-    "api"
-  ],
+  "scripts": {
+    "start": "node app.js"
+  },
   "author": "Ryosuke OKAMAE <ryosuke4138@gmail.com>",
   "main": "app.js",
   "version": "1.0.0",

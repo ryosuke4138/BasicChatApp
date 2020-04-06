@@ -11,9 +11,10 @@ create table conversations (
   convo_name varchar(30) not null default 'Chat',
   created_on timestamp not null default now()
 );
-create table users_in_conversation user_id int references users(user_id),
-convo_id int references conversations(convo_id),
-primary key (user_id, convo_id)
+create table users_in_conversation (
+  user_id int references users(user_id),
+  convo_id int references conversations(convo_id),
+  primary key (user_id, convo_id)
 );
 create table messages (
   message_id int primary key auto_increment,
