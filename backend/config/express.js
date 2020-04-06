@@ -4,8 +4,6 @@ const bodyParser = require("body-parser");
 module.exports = function () {
   const app = express();
 
-  app.use(bodyParser.json());
-
   app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header(
@@ -15,6 +13,8 @@ module.exports = function () {
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
     next();
   });
+
+  app.use(bodyParser.json());
 
   require("../app/routes/user.server.routes.js")(app);
   require("../app/routes/conversation.server.routes.js")(app);
